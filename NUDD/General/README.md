@@ -1,15 +1,18 @@
-# General
+# NUDD General
 
-This folder contains shared NUDD materials that apply across all projects.
+Shared cross-project NUDD materials.
 
-## Purpose
-- Reusable templates for NUDD notes
-- Common process guidance
-- Shared scanning tools and checklists
-- Prompts that can be reused across projects
+## Structure
+- `prompts/` — canonical prompts and protocols
+- `templates/` — reusable worksheets and matrices
+- `process/` — operating model and workflow guidance
+- `scanning-tools/` — reusable scanning methods and checklists
 
-## Suggested contents
-- `templates/` for note and review templates
-- `process/` for working conventions and workflows
-- `scanning-tools/` for tools, checklists, and references
-- `prompts/` for reusable prompt patterns
+## Recommended canonical file set
+- `prompts/00-nudd-master-protocol-v6.md`
+- `templates/kei-scenario-mapping-template.md`
+- `templates/blind-spot-ledger-template.md`
+- `templates/verification-matrix-template.md`
+- `templates/pre-mortem-template.md`
+- `scanning-tools/nudd-interrogators-kit.md`
+- `process/nudd-operating-model.md`
