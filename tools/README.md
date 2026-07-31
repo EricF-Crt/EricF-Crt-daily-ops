@@ -6,3 +6,6 @@ This folder contains scripts, utilities, and small automations for daily work.
 - Small helper scripts
 - One-off automations that become reusable
 - Notes on usage and maintenance
+
+## Current files
+- `mcp.atlassian.json` - Atlassian MCP server config snippet
