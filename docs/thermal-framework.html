@@ -8,21 +8,33 @@
 <body>
 <main>
   <h1>Thermal Framework: Stress Definition and Cross-Team Execution</h1>
-  <p><strong>Status:</strong> Proposed for alignment. <strong>Scope:</strong> Current and future products, including thermally constrained platforms.</p>
-  <p><strong>Ownership:</strong> Thermal owns the framework; contributing teams supply requirements and technical evidence; PIE verifies. Named DRIs, dates, and technical approvals remain pending.</p>
-  <p><strong>Delivery status:</strong> This is a local review page prepared for Confluence publication, not a published Confluence page or an approved test specification. No hardware tests or platform integrations have been performed. Publication requires a destination space, parent page, and authorized publishing access.</p>
+  <p><strong>Status:</strong> Proposed for alignment · <strong>Scope:</strong> Current and future products, including thermally constrained platforms · <strong>Framework owner:</strong> Thermal</p>
+  <p><strong>Review audience:</strong> Product/UX, Data Science (DS), SW, EE/SoC, Thermal, PIE/HWV, Reliability/Safety, and GDM. Named DRIs and delivery dates will be agreed at kickoff.</p>
+  <p><strong>Publication:</strong> Confluence-ready local draft; not published or technically approved. Hardware validation and SW integrations remain pending.</p>
+  <nav aria-label="Page contents">
+    <p><a href="#summary">Summary and decisions</a> · <a href="#guideline">Stress guideline</a> · <a href="#tooling">Common SW approach</a> · <a href="#actions">Team actions</a> · <a href="#meetings">Meetings and priorities</a> · <a href="#completion">Completion</a> · <a href="#references">Supporting material</a></p>
+  </nav>
 
-  <h2>1. Summary and expected outcomes</h2>
-  <p>Establish what to test, why the workload is appropriate, and what constitutes acceptable behavior.</p>
+  <h2 id="summary">1. Executive summary and decisions requested</h2>
+  <p><strong>Why this work:</strong> Current discussions identify gaps in the rationale connecting product usage, CPU/DDR settings, platform controls, and acceptance criteria. Shared settings are not inherently incorrect; their coverage must be demonstrated.</p>
+  <p><strong>Outcome:</strong> Agree what to test, why it represents the intended stress, and which thermal and functional behavior is acceptable.</p>
   <ol>
-    <li>A reusable guideline for deriving stress levels for future projects, by product category where evidence supports reuse.</li>
-    <li>A common SW toolset and testing approach with minimal changes to existing tools and configurable project profiles.</li>
-    <li>Project profiles linking workloads, platform limits, thermal controls, performance, and recovery, with validation evidence before approval.</li>
+    <li><strong>Reusable guideline:</strong> Derive future-project stress levels by category where evidence supports reuse—not just select today's numbers.</li>
+    <li><strong>Common SW approach:</strong> Reuse existing tools with minimal changes, configurable profiles, and consistent evidence.</li>
+    <li><strong>Verified project profiles:</strong> Connect workload, limits, protection, performance, and recovery before approval.</li>
   </ol>
   <p><strong>Supported usage → usage evidence + platform constraints → stress definition → common execution → verification and approval.</strong></p>
-  <p>Category grouping enables reuse; it must not conceal meaningful platform differences. Candidate categories include music playback, HDMI/home theater, and applicable video/display roles. Product must confirm membership. The source term “Male transducer” requires clarification before use as a category.</p>
+  <h3>Decisions for the first review</h3>
+  <ul>
+    <li>Confirm product categories and the proposed P50/P99 principles, including DS/SW responsibility for usage evidence.</li>
+    <li>Confirm one DRI per deliverable and the inputs needed from each team.</li>
+    <li>Agree tool reuse as the default and nominate representative pilots, including a constrained platform.</li>
+    <li>Assign the platform-control and project gaps below; do not treat missing evidence as approval.</li>
+  </ul>
+  <p><strong>Ownership stays unchanged:</strong> Thermal owns the framework; Product, DS, SW, and EE provide requirements and evidence; PIE verifies; GDM executes approved methods.</p>
 
-  <h2>2. Stress-definition principles and reusable guideline</h2>
+  <h2 id="guideline">2. Stress-definition principles and reusable guideline</h2>
+  <p>Start with supported functions, then account for SoC/DDR, software, and thermal constraints. Candidate categories include music playback, HDMI/home theater, and applicable video/display roles. Product must confirm membership; category reuse must not conceal platform differences.</p>
   <h3>2.1 Agree on definitions before selecting numbers</h3>
   <table>
     <caption>Proposed stress levels; definitions require stakeholder approval</caption>
@@ -34,15 +46,8 @@
       <tr><td>Abnormal/protection condition</td><td>Credible conditions outside supported operation, including defined abusive conditions requiring protection assessment.</td><td>Approved safety boundaries, protective behavior, and recovery requirements; normal functionality is not necessarily required.</td></tr>
     </tbody>
   </table>
-  <ul>
-    <li>Define “higher demand”: CPU utilization and allocated memory alone do not establish thermal severity.</li>
-    <li>Specify active-playback eligibility, population, timestamp coverage, units, aggregation window, and weighting. A fleet-time distribution is not necessarily a typical-device distribution.</li>
-    <li>For a selected weighted empirical quantile convention, accumulate valid observed duration by metric value and locate the first value reaching the chosen fraction of total duration. Document interpolation, ties, and data gaps; do not count unobserved gaps as valid exposure.</li>
-    <li>Review confidence, sampling bias, and throttling that may hide requested demand. Do not claim exact exceedance fractions for discrete values or ties.</li>
-    <li>Select realistic joint scenarios with appropriate duration; do not combine independent per-variable P99 values into an unsupported scenario. P99 workload does not imply P99 temperature.</li>
-    <li>Supplement playback statistics with applicable standby, update, charging, and interface scenarios.</li>
-    <li>Keep supported-operation criteria separate from protection-test criteria. Field statistics do not replace hardware limits.</li>
-  </ul>
+  <p><strong>Core rules:</strong> Define the metric and population first; use realistic concurrent scenarios and durations; account for throttling and uncertainty. CPU utilization, memory allocation, and workload percentiles are not temperature predictions. Include applicable non-playback scenarios. Field statistics do not replace engineering limits or protection testing.</p>
+  <p>DS/SW provide usage evidence and reproducible workloads; Product confirms supported use; Thermal sets thermal coverage and acceptance. Detailed statistical requirements are in <a href="#method-notes">the methodology notes</a>.</p>
   <h3>2.2 Derive settings for a new project</h3>
   <table>
     <thead><tr><th scope="col">Step</th><th scope="col">Activity</th><th scope="col">Output / review criterion</th></tr></thead>
@@ -55,11 +60,11 @@
     </tbody>
   </table>
   <p>Reuse a category profile only when supported usage and measured platform behavior justify it. Do not scale parameters solely by DDR capacity or assume identical commands create equivalent stress. New-project assumptions remain provisional until validated.</p>
-  <p>Use <a href="thermal-project-profile.template.json">the project profile template</a> for one scenario per profile. Copy it for each applicable level. Nulls and empty lists mean unresolved/not supplied, never zero, not applicable, or passed. It is a documentation template, not a runnable configuration or validation schema.</p>
+  <p><strong>Output:</strong> One versioned profile per scenario, with derivation rationale, evidence, criteria, and approvals. The <a href="thermal-project-profile.template.json">profile template</a> is a documentation aid, not executable configuration; empty fields are unresolved, never approval.</p>
 
-  <h2>3. Common SW approach — reuse first, minimal changes</h2>
+  <h2 id="tooling">3. Common SW approach — reuse first, minimal changes</h2>
   <p><strong>Existing tools + shared execution/reporting conventions + configurable profiles + thin platform integrations where needed.</strong></p>
-  <p><strong>Repository inventory:</strong> At preparation, the tools directory contains only its README; no thermal runner, vendor integration, telemetry dataset, or existing build/test configuration was found. Consequently this package defines the interface and handoff, rather than inventing a runner or claiming hardware support. SW must identify the actual tool locations and owners before code changes are scoped.</p>
+  <p>Standardize execution and evidence, not platform thresholds or identical workloads. Identify existing tool owners and source locations before proposing code changes.</p>
   <table>
     <thead><tr><th scope="col">Layer</th><th scope="col">Common contract</th><th scope="col">Platform/project variation</th></tr></thead>
     <tbody>
@@ -69,42 +74,37 @@
       <tr><td>Reporting</td><td>Requested versus achieved demand, configuration, evidence, and disposition.</td><td>Constraints, unsupported capabilities, and approved alternatives.</td></tr>
     </tbody>
   </table>
-  <h3>3.1 Minimal-change implementation handoff</h3>
-  <ol>
-    <li>Inventory available tools, source locations, versions, owners, platform coverage, and known limitations.</li>
-    <li>Map existing capabilities to the common contract; prefer configuration changes over forks or new infrastructure.</li>
-    <li>Propose only the missing integrations or reporting extensions, with owners and existing validation commands.</li>
-    <li>Pilot representative platforms, including a constrained product; demonstrate repeatability and expose unsupported capabilities.</li>
-  </ol>
+  <h3>3.1 SW delivery sequence</h3>
+  <p><strong>Inventory → assess gaps → configure or minimally extend → pilot.</strong> Deliver a capability matrix, a scoped change proposal, and repeatability evidence. Prefer configuration over forks; use existing validation commands for changes.</p>
   <h3>3.2 Constrained products and acceptance</h3>
   <p><strong>Requested demand → achieved demand → limiting mechanism → functional impact → coverage disposition.</strong></p>
   <ul>
     <li>Expected throttling is assessed against the approved product requirement; it is neither automatically a pass nor a failure.</li>
-    <li>Allocation failure, OOM, unexpected workload exit, or missing required telemetry blocks an affirmative result. Optional unavailable metrics require an explicit coverage assessment.</li>
-    <li>Record execution validity separately from product acceptance. Invalid execution cannot yield a pass; unresolved coverage remains pending.</li>
+    <li>Separate execution validity from acceptance: allocation failure, OOM, unexpected exit, or missing required telemetry cannot yield a pass. Optional missing metrics require a coverage assessment.</li>
     <li>Evaluate software optimization, power-management profiles, approved performance/feature restrictions, or hardware changes as design alternatives.</li>
     <li>Approve workload substitutions or complementary tests only with evidence of retained and lost coverage. Do not lower requirements merely to pass.</li>
     <li>Keep protection enabled. Special characterization requires approved monitoring, boundaries, and stop conditions.</li>
   </ul>
   <p><strong>SW acceptance:</strong> Common execution and reporting are demonstrated on representative projects, including a constrained platform, without concealing achieved-load differences or capability gaps.</p>
 
-  <h2>4. Cross-team actions and dependencies</h2>
+  <h2 id="actions">4. Cross-team actions and handoffs</h2>
+  <p>Functional responsibilities below are proposed handoffs. Use the register IDs to assign named DRIs, evidence, dates, and closure decisions without duplicating status on this page.</p>
   <table>
-    <thead><tr><th scope="col">Team</th><th scope="col">Action</th><th scope="col">Deliverable → consumer</th></tr></thead>
+    <thead><tr><th scope="col">Team</th><th scope="col">Action</th><th scope="col">Deliverable → consumer</th><th scope="col">Register IDs</th></tr></thead>
     <tbody>
-      <tr><td>Product / UX</td><td>Confirm category suitability, supported scenarios, boundaries, degradation, and recovery.</td><td>Scenario/behavior requirements → DS, SW, Thermal.</td></tr>
-      <tr><td>Data Science + SW/Application</td><td>DS owns statistical analysis; SW profiles demand and reproducible workloads.</td><td>Usage model and workload rationale → Thermal.</td></tr>
-      <tr><td>EE + SW Platform / SoC</td><td>EE provides limits/constraints; SW/SoC documents controls, observability, protection, and recovery.</td><td>Platform specification and capability matrix → Thermal, tooling owner, PIE.</td></tr>
-      <tr><td>Thermal</td><td>Own derivation guideline, reuse decisions, sensor correlations, limits, and coverage.</td><td>Approved framework/project matrices → SW tooling, PIE.</td></tr>
-      <tr><td>SW tooling owner</td><td>Inventory tools; propose minimal changes; support profiles and common reporting.</td><td>Execution package and pilot evidence → PIE/GDM.</td></tr>
-      <tr><td>Eric / PIE-HWV</td><td>Maintain gaps; verify validity, correlation, and thermal/functional behavior.</td><td>Verification report and closure recommendation → technical approvers.</td></tr>
-      <tr><td>Reliability/Safety + design owners</td><td>Approve safe boundaries; assess alternatives and residual risks.</td><td>Safety constraints and dispositions → Thermal, PIE, Product.</td></tr>
-      <tr><td>Daniel / GDM</td><td>Train, reproduce tests, and obtain design-team review.</td><td>Qualified execution and reviewed evidence → PIE and framework release.</td></tr>
+      <tr><td>Product / UX</td><td>Confirm categories, supported scenarios, boundaries, and acceptable behavior.</td><td>Scenario requirements → DS, SW, Thermal.</td><td>TF-02, TF-13</td></tr>
+      <tr><td>Data Science + SW/Application</td><td>DS characterizes usage; SW profiles resources and reproducible workloads.</td><td>Usage model and workload rationale → Thermal.</td><td>TF-03</td></tr>
+      <tr><td>EE + SW Platform / SoC</td><td>Supply hardware limits, sensor mapping, controls, and recovery.</td><td>Platform specifications → Thermal, tooling owner, PIE.</td><td>TF-04–07</td></tr>
+      <tr><td>Thermal</td><td>Integrate evidence; define derivation, correlations, criteria, and exceptions.</td><td>Guideline and project matrices → SW tooling, PIE.</td><td>TF-09–13</td></tr>
+      <tr><td>SW tooling owner</td><td>Inventory, minimally extend, and demonstrate the shared approach.</td><td>Execution package → PIE/GDM.</td><td>TF-08, TF-15</td></tr>
+      <tr><td>Eric / PIE-HWV</td><td>Maintain gaps; verify actual load, thermal behavior, performance, and recovery.</td><td>Evidence and closure recommendations → technical approvers.</td><td>TF-14, TF-16, TF-18</td></tr>
+      <tr><td>Reliability/Safety + design owners</td><td>Approve safe boundaries and assess constrained-product alternatives.</td><td>Constraints and risk dispositions → Thermal, PIE, Product.</td><td>TF-11, TF-13–14</td></tr>
+      <tr><td>Daniel / GDM</td><td>Train, reproduce tests, and obtain design-team review.</td><td>Qualified execution → PIE and framework release.</td><td>TF-17</td></tr>
     </tbody>
   </table>
-  <p>Confirm a coordinator and one named DRI per deliverable at kickoff. Coordination does not transfer technical ownership. The source attribution “Se” versus Artie remains to be confirmed.</p>
+  <p><strong>Coordination:</strong> TF-01 assigns named DRIs; TF-19 tracks publication. Coordination does not transfer technical ownership. The <a href="thermal-actions.csv">action register</a> is the working record for dependencies and status.</p>
 
-  <h2>5. Meetings and decision gates</h2>
+  <h2 id="meetings">5. Meetings and decision gates</h2>
   <table>
     <thead><tr><th scope="col">Meeting</th><th scope="col">Participants / inputs</th><th scope="col">Decision / exit</th></tr></thead>
     <tbody>
@@ -115,18 +115,26 @@
       <tr><td>4. Pilot results and release</td><td>Technical owners and GDM; actual evidence and exceptions.</td><td>Require corrections or approve guideline, profiles, and execution package.</td></tr>
     </tbody>
   </table>
-  <p>Meetings 2A/2B can run in parallel. Agree dates from dependencies, not assumed commitments. Use <a href="thermal-actions.csv">the action register</a> for owners, dependencies, deliverables, criteria, dates, evidence, and status.</p>
+  <p>Meetings 2A/2B run in parallel after kickoff. Owners bring evidence and a proposed decision; each meeting closes with decisions, remaining gaps, DRIs, and agreed dates. Readiness and release depend on evidence, not elapsed time.</p>
   <h3>Priority inputs</h3>
   <ul>
     <li><strong>Stage:</strong> Match 1 core + 200M and reported P1 4 cores + 750M to hardware/memory/build revisions; resolve Bluetooth line-out.</li>
     <li><strong>Pallas:</strong> Explain identical stress levels, constraints, and alternative coverage.</li>
     <li><strong>Shared recipes:</strong> Justify Olympia/Bear/Mavrick/Gambit reuse; explain Tito/Mojave differences. Confirm product naming.</li>
-    <li><strong>Vendors:</strong> Amlogic has discussion details requiring validation; Synaptics is pending; MTK applicability and behavior remain unconfirmed.</li>
     <li><strong>Coverage:</strong> Resolve Audio/RF concurrency, HDMI/WAV and video/passthrough paths, sensor/backoff correlation, and Solar applicability.</li>
   </ul>
-  <p>For every applicable vendor, document sensor → threshold source/build → control layer → action → observation → recovery. Do not infer identical implementations. Reported Amlogic 105/107/110°C behaviors and a proposed 90°C recovery point are unverified discussion inputs, not universal limits or safe test targets. Confirm which controller remains active before proposing Linux-driven restart.</p>
+  <h3>Three-vendor control review</h3>
+  <table>
+    <thead><tr><th scope="col">Platform</th><th scope="col">Evidence status</th><th scope="col">Next decision / evidence</th></tr></thead>
+    <tbody>
+      <tr><td>Amlogic</td><td>Mechanisms discussed; implementation and behavior not independently verified.</td><td>Confirm build-specific M3/kernel responsibilities, thresholds, actions, and recovery.</td></tr>
+      <tr><td>Synaptics</td><td>Pending clarification.</td><td>Obtain native protection and firmware/OS control details, observability, and recovery.</td></tr>
+      <tr><td>MTK / MediaTek</td><td>Applicability and implementation unconfirmed.</td><td>Confirm applicable products and actual control architecture; missing information does not establish N/A.</td></tr>
+    </tbody>
+  </table>
+  <p>For each applicable platform, document <strong>sensor → threshold source/build → control layer → action → observation → recovery</strong>. Reported Amlogic 105/107/110°C behavior and proposed 90°C recovery remain unverified—not universal targets. Confirm which controller stays active before proposing automatic restart.</p>
 
-  <h2>6. Completion and maintenance</h2>
+  <h2 id="completion">6. Completion and maintenance</h2>
   <ul>
     <li>A new project can derive justified settings without undocumented historical assumptions.</li>
     <li>Current profiles have measured evidence or explicit provisional status.</li>
@@ -138,10 +146,32 @@
   <p>Reassess affected profiles when usage, features, SoC/DDR, software demand, thermal policies, sensors, or mechanical configuration changes. Record the impact assessment and required revalidation.</p>
   <p><strong>Scenario → justified workload → achieved stress → thermal and functional behavior → acceptance evidence.</strong></p>
 
-  <h2>Sources and publication handoff</h2>
+  <h2 id="references">Supporting material and publication</h2>
+  <h3>Working artifacts</h3>
+  <ul>
+    <li><a href="thermal-project-profile.template.json">Project profile template</a>: one scenario per profile. Nulls/empty lists mean unresolved, not zero, N/A, or passed. This is not a runnable configuration or validation schema.</li>
+    <li><a href="thermal-actions.csv">Action register</a>: action/decision, DRI, dependency, deliverable, acceptance criterion, date, evidence, and status.</li>
+  </ul>
+  <h3 id="method-notes">Methodology notes for DS/SW review</h3>
+  <ul>
+    <li>Specify active-playback eligibility, population, timestamp coverage, metric units, aggregation window, and weighting. Fleet playback time and typical-device usage are different populations.</li>
+    <li>For an agreed weighted empirical quantile convention, accumulate valid observed duration by metric value and locate the first value reaching the selected fraction of total duration. Record the convention and treatment of ties/interpolation; exclude unobserved gaps.</li>
+    <li>Assess confidence, sampling bias, and throttling that can mask demand. Ties/discrete values can change exact exceedance fractions.</li>
+    <li>Preserve realistic concurrency and peak duration; do not combine unrelated P99 values. P99 workload does not imply P99 temperature.</li>
+  </ul>
+  <h3>Evidence and implementation boundaries</h3>
   <p>Based on the supplied Eric/Ron/Nathaniel discussions and the supplied 2026-10-12 meeting notes. No vendor implementation or project measurements have been independently verified.</p>
+  <p>The source term “Male transducer” and the attribution “Se” versus Artie require clarification. Neither is treated as an approved category or confirmed individual assignment.</p>
+  <p>No thermal runner, vendor integrations, or telemetry dataset was found in this repository when this package was prepared. SW must identify actual tool sources and existing validation commands before scoping code changes. This page defines the handoff, not completed platform support.</p>
   <p><a href="https://sonosinc.atlassian.net/browse/SWPBL-244203">SWPBL-244203</a> remains an unreviewed input. The repository <a href="../NUDD/General/templates/nudd-finding-record-template.md">NUDD finding template</a> supports separating observation, risk, evidence, action, and closure; its illustrative limits are not requirements for these products.</p>
-  <p>For Confluence: select the authorized space/parent, transfer the rendered page into the editor, attach the profile template and action register, replace relative links with destination links, and check tables and links in preview. Direct HTML import support depends on the Confluence environment. Record the published URL and version in this package after publication; no remote publication is claimed here.</p>
+  <h3>Confluence publishing checklist — TF-19</h3>
+  <ol>
+    <li>Confirm the destination space, parent page, page owner, and authorized access.</li>
+    <li>Transfer the rendered content into the Confluence editor; direct HTML import support depends on the environment.</li>
+    <li>Attach the profile template and action register; replace repository-relative links with Confluence attachment/page links.</li>
+    <li>Recreate heading navigation with Confluence links or its table-of-contents feature as needed. Preview all headings, tables, and links.</li>
+    <li>Publish with the proposed status intact; record the resulting URL and version in the action register. Technical approval is a separate gate.</li>
+  </ol>
 </main>
 </body>
 </html>
