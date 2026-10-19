@@ -3,6 +3,7 @@
 This document finalizes the comprehensive future meeting plan and consolidated actions arising from the Eric Feng ↔ D. Casner thread (Oct 10–15) and the two companion reports:
 - `docs/pie-hwv-key-discussion-points.md` (Report 1 — key discussion points)
 - `docs/pie-hwv-comprehensive-report.md` (Report 2 — comprehensive analysis, monthly registers, action table)
+- `docs/pie-hwv-confluence-stakeholder-page.md` (ready-to-publish stakeholder Confluence page)
 
 ## 1. Meeting series overview
 
