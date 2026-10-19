@@ -1,6 +1,6 @@
 # Report 2 — Comprehensive PIE/HWV Thread Analysis and Follow-Up Plan
 
-Companion document: `docs/pie-hwv-key-discussion-points.md` (Report 1 — short discussion list).
+Companion documents: `docs/pie-hwv-key-discussion-points.md` (Report 1 — short discussion list) and `docs/pie-hwv-future-meeting-plan.md` (finalized future meeting plan and action tracker).
 
 ## 1. Context and strategic alignment
 The thread (Eric Feng ↔ D. Casner, Oct 10–15) highlights a critical transition phase between PIE (Product Integration Engineering) / HWV (Hardware Validation) and HW (Hardware) / EL (Electrical) leadership. All HW/EL leaders have been following Heartbeat Logic planning and driving project meetings, and PIE engineers depend on those meetings for agendas, deliverables, and escalation.
@@ -104,6 +104,7 @@ Value of this register: demonstrates PIE's closed-loop contribution at CP review
 ## 8. References
 - Slack thread: Eric Feng ↔ D. Casner, Oct 10 and Oct 15 (source of sections 1–4).
 - `docs/pie-hwv-key-discussion-points.md` — key points list (Report 1).
+- `docs/pie-hwv-future-meeting-plan.md` — finalized future meeting plan and action tracker.
 - `NUDD/PIE/README.md` — PIE exploration notes.
 - `NUDD/<Project>/` folders (Bear, Jaws, Maestro, Maverick, Olympia, PCH, Stage) — collection source for monthly registers (§6).
 - `NUDD/General/templates/nudd-finding-record-template.md` — NUDD finding record standard (also used for §6 register entries).

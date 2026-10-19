@@ -2,6 +2,8 @@
 
 Source: Slack thread between Eric Feng (PIE) and D. Casner (HW leader), Oct 10–15, plus repository PIE/HWV materials (`NUDD/PIE/`, `PFS/`, `NUDD/General/`).
 
+Finalized meeting plan and action tracker: `docs/pie-hwv-future-meeting-plan.md`.
+
 Status legend: 🔴 needs decision · 🟡 in progress / partially aligned · 🟢 agreed, pending execution
 
 ## 1. Confluence page & meeting management (🔴 — open disagreement)
