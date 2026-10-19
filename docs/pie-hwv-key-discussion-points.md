@@ -35,7 +35,17 @@ Status legend: 🔴 needs decision · 🟡 in progress / partially aligned · �
 - **Key point:** Formalize the newly agreed regular NPI/HWV sync between Eric, Daniel, and Alexa (monthly or bi-monthly, cadence TBD).
 - **To discuss:** Standing agenda, meeting page ownership, and soliciting ongoing roadmap or process topics from HW Leaders for future sessions.
 
-## 7. Existing PIE mechanisms to leverage (🟢 — for awareness)
+## 7. Monthly per-project urgent issues for PCE / HW lead (🔴 — standing agenda item)
+- **Key point:** Each month, collect from every project the most important and most urgent issues that require PCE or HW lead resolution, and bring them to the leadership sync / CP review as a standing agenda item.
+- **Current month (October) register:** see Report 2 §6.1 for the per-project table (Bear, Jaws, Maestro, Maverick, Olympia, PCH, Stage). Project folders in `NUDD/` are the collection source; entries pending input from project PIE leads.
+- **To discuss:** Confirm collection cadence (by PIE Weekly Report roll-up), escalation SLA, and who on PCE / HW lead side owns disposition of each item.
+
+## 8. Monthly per-project feedback-into cases (🟡 — standing agenda item)
+- **Key point:** Each month, collect per-project "feedback into" cases — findings fed back into design, PFS, NUDD list, process, or checklists — to demonstrate PIE value and close the learning loop.
+- **Current month (October) register:** see Report 2 §6.2 for the per-project table; entries pending input from project PIE leads.
+- **To discuss:** Standard case format (finding → feedback target → change made → evidence), and whether accepted cases should feed the Unified NUDD list and CP PIE Deck automatically.
+
+## 9. Existing PIE mechanisms to leverage (🟢 — for awareness)
 - HWV Strategy with Overall PIE Questions List.
 - G-PIE Meeting: CN PIE lead urgent questions escalated to US PIE for PD meeting discussion.
 - PIE Weekly Report documenting weekly critical questions.
@@ -43,5 +53,6 @@ Status legend: 🔴 needs decision · 🟡 in progress / partially aligned · �
 
 ## Repository cross-references
 - `NUDD/PIE/README.md` — PIE exploration notes; reconcile with Soundstage source when accessible.
-- `PFS/pie-soundstage-dashboard-spec.md` — candidate vehicle for tracking PIE readiness/risks/decisions (topics 3, 5, 7).
-- `NUDD/General/templates/nudd-finding-record-template.md` — ready template to standardize the unified NUDD list (topic 3.1).
+- `PFS/pie-soundstage-dashboard-spec.md` — candidate vehicle for tracking PIE readiness/risks/decisions (topics 3, 5, 7, 8, 9).
+- `NUDD/General/templates/nudd-finding-record-template.md` — ready template to standardize the unified NUDD list (topic 3.1) and feedback-into case records (topic 8).
+- `NUDD/<Project>/` folders (Bear, Jaws, Maestro, Maverick, Olympia, PCH, Stage) — collection source for monthly urgent issues and feedback-into cases (topics 7, 8).

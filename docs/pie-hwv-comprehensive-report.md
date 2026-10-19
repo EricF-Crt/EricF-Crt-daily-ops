@@ -52,7 +52,40 @@ These map naturally onto the PIE Soundstage dashboard structure already specifie
 - **Discovery risk:** Engineers using stale or wrong meeting pages lose preparation time and act on outdated agendas.
 - **Escalation risk:** PIE open questions without an official channel surface late in PD meetings instead of being pre-staged.
 
-## 6. Action items & next steps
+## 6. Monthly per-project registers (current month: October)
+PIE maintains two monthly registers, rolled up from the PIE Weekly Report and `NUDD/<Project>/` folders, and reviewed as standing agenda items at the leadership sync and CP reviews. Entries below are pending input from project PIE leads; project folders in `NUDD/` currently hold exploration placeholders only.
+
+### 6.1 Most important / most urgent issues requiring PCE or HW lead resolution
+Collection rule: each project PIE lead submits the top 1–2 issues that are blocked without PCE / HW lead action, with priority (P0–P3) and evidence level (E0–E5) per `NUDD/General/templates/nudd-finding-record-template.md`.
+
+| Project | Issue (top urgent) | Priority | Needed from (PCE / HW lead) | Requested action & due date | Status |
+| --- | --- | --- | --- | --- | --- |
+| Bear | _pending input_ | — | — | — | Open |
+| Jaws | _pending input_ | — | — | — | Open |
+| Maestro | _pending input_ | — | — | — | Open |
+| Maverick | _pending input_ | — | — | — | Open |
+| Olympia | _pending input_ | — | — | — | Open |
+| PCH | _pending input_ | — | — | — | Open |
+| Stage | _pending input_ | — | — | — | Open |
+
+Escalation handling: P0/P1 items go to the next PD meeting immediately (via G-PIE routing if raised by CN PIE); P2/P3 items are held for the monthly leadership sync. Each item must leave the meeting with a PCE / HW lead owner and a due date.
+
+### 6.2 Feedback-into cases (findings fed back into design / PFS / NUDD / process)
+Collection rule: each project reports cases where a PIE/HWV finding was fed back into an upstream artifact — design change, PFS limit adjustment or NEW PFS, Unified NUDD list entry, PDP checklist, or process update — using the format *finding → feedback target → change made → evidence*.
+
+| Project | Finding (summary) | Feedback target | Change made | Evidence level | Status |
+| --- | --- | --- | --- | --- | --- |
+| Bear | _pending input_ | — | — | — | Open |
+| Jaws | _pending input_ | — | — | — | Open |
+| Maestro | _pending input_ | — | — | — | Open |
+| Maverick | _pending input_ | — | — | — | Open |
+| Olympia | _pending input_ | — | — | — | Open |
+| PCH | _pending input_ | — | — | — | Open |
+| Stage | _pending input_ | — | — | — | Open |
+
+Value of this register: demonstrates PIE's closed-loop contribution at CP reviews (via the CP PIE Deck Template), and accepted cases feed the Unified NUDD list so coverage grows from real field/validation learning rather than static checklists.
+
+## 7. Action items & next steps
 | # | Action | Owner | Depends on |
 | --- | --- | --- | --- |
 | 1 | **Schedule leadership sync:** finalize calendar cadence (monthly or bi-monthly) for the HWV/PD sync involving Eric, Daniel, and Alexa | Daniel (with Alexa) + Eric | — |
@@ -64,10 +97,14 @@ These map naturally onto the PIE Soundstage dashboard structure already specifie
 | 7 | Propose in-scope worst-case usage models as an official CP deliverable | PIE + UX (Bryan) + PCT | — |
 | 8 | Define pass/fail criteria sign-off and PFS limit adjustment governance | PIE + HWV | 7 |
 | 9 | Review PIE Open Questions List with HW leader / PCT and assign owners/dates | Eric + Daniel / PCT | 1 |
+| 10 | Collect October per-project urgent issues for PCE / HW lead resolution (§6.1) and bring P0/P1 items to the next PD meeting | Project PIE leads + Eric | — |
+| 11 | Collect October per-project feedback-into cases (§6.2) in finding → target → change → evidence format | Project PIE leads + Eric | — |
+| 12 | Agree with PCE / HW leads on monthly register cadence, escalation SLA, and disposition owners for §6.1/§6.2 items | Eric + Daniel / PCE | 1 |
 
-## 7. References
+## 8. References
 - Slack thread: Eric Feng ↔ D. Casner, Oct 10 and Oct 15 (source of sections 1–4).
 - `docs/pie-hwv-key-discussion-points.md` — key points list (Report 1).
 - `NUDD/PIE/README.md` — PIE exploration notes.
-- `NUDD/General/templates/nudd-finding-record-template.md` — NUDD finding record standard.
+- `NUDD/<Project>/` folders (Bear, Jaws, Maestro, Maverick, Olympia, PCH, Stage) — collection source for monthly registers (§6).
+- `NUDD/General/templates/nudd-finding-record-template.md` — NUDD finding record standard (also used for §6 register entries).
 - `PFS/pie-soundstage-dashboard-spec.md`, `docs/pie-soundstage-dashboard-delivery.md` — PIE dashboard specification for tracking readiness, risks, and decisions.
