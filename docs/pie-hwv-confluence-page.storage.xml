@@ -1,0 +1,164 @@
+<!-- Confluence Storage Format for page: "PIE/HWV × PCE Alignment Hub (HW Leader & SW/UX Leader)"
+     How to publish:
+     1) Confluence Cloud/DC editor → Insert (+) → "Markup" → choose "Confluence Wiki" OFF / "Storage format" (or use the Source Editor app), paste this file's content below this comment block.
+     2) Or via REST API:
+        POST /wiki/rest/api/content
+        {"type":"page","title":"PIE/HWV × PCE Alignment Hub","space":{"key":"<SPACE>"},
+         "body":{"storage":{"value":"<contents of this file>","representation":"storage"}}}
+     Native macros used: status, info, note, expand, details (page properties), children, toc. -->
+
+<ac:structured-macro ac:name="details">
+  <ac:rich-text-body>
+    <table>
+      <tbody>
+        <tr><th>Owner</th><td>Eric Feng (PIE)</td></tr>
+        <tr><th>PCE Sponsors</th><td>D. Casner (HW Leader) · Bryan (SW/UX Leader)</td></tr>
+        <tr><th>Coordinator</th><td>Alexa</td></tr>
+        <tr><th>Cadence</th><td>Monthly sync</td></tr>
+        <tr><th>Overall status</th><td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Yellow</ac:parameter><ac:parameter ac:name="title">IN TRANSITION</ac:parameter></ac:structured-macro></td></tr>
+        <tr><th>Last updated</th><td>YYYY-MM-DD</td></tr>
+        <tr><th>Next check-in</th><td>YYYY-MM-DD</td></tr>
+      </tbody>
+    </table>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<ac:structured-macro ac:name="toc"><ac:parameter ac:name="maxLevel">2</ac:parameter></ac:structured-macro>
+
+<h1>1. Summary</h1>
+<ac:structured-macro ac:name="info">
+  <ac:rich-text-body>
+    <p><strong>Goal:</strong> make HWV strategy inputs official CP deliverables for all programs — no longer dependent on individual engineers' initiative.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<table>
+  <tbody>
+    <tr><th>Status</th><td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Yellow</ac:parameter><ac:parameter ac:name="title">IN TRANSITION</ac:parameter></ac:structured-macro> sync agreed; CP deliverable proposals pending approval</td></tr>
+    <tr><th>This month</th><td>Formalizing Unified NUDD list + worst-case usage models as CP requirements</td></tr>
+    <tr><th>Decision needed</th><td>HW Leader approval of G-003 (Unified NUDD list) and SW/UX Leader approval of G-004 (usage models + pass/fail) — see Plan, P1/P2</td></tr>
+  </tbody>
+</table>
+
+<h1>2. X-Team Guidelines (the rulebook)</h1>
+<ac:structured-macro ac:name="note">
+  <ac:rich-text-body><p>Concluded topics become numbered guidelines applying to <strong>all future projects/programs</strong>. Add rows as topics close; supersede by strikethrough + link, never delete. Label: <code>xteam-guideline</code>.</p></ac:rich-text-body>
+</ac:structured-macro>
+<table>
+  <tbody>
+    <tr><th>#</th><th>Guideline</th><th>Applies to</th><th>Status</th></tr>
+    <tr><td>G-001</td><td>Monthly PIE↔PCE leader sync (Eric, Daniel/HW, Bryan/SW-UX, Alexa); cadence reviewed after 2 sessions</td><td>All NPI programs</td><td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Green</ac:parameter><ac:parameter ac:name="title">ADOPTED</ac:parameter></ac:structured-macro></td></tr>
+    <tr><td>G-002</td><td>Meeting pages: chronological folders + "latest page" macro (after pilot); PIE Weekly / G-PIE keep fixed URLs</td><td>All PD/Heartbeat meetings</td><td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Blue</ac:parameter><ac:parameter ac:name="title">PILOT</ac:parameter></ac:structured-macro></td></tr>
+    <tr><td>G-003</td><td>Unified NUDD list = mandatory CP deliverable — owned by <strong>HW Leader</strong></td><td>All programs at CP</td><td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Red</ac:parameter><ac:parameter ac:name="title">PROPOSED</ac:parameter></ac:structured-macro></td></tr>
+    <tr><td>G-004</td><td>Worst-case usage models + pass/fail criteria = mandatory CP deliverable — owned by <strong>SW/UX Leader</strong></td><td>All programs at CP</td><td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Red</ac:parameter><ac:parameter ac:name="title">PROPOSED</ac:parameter></ac:structured-macro></td></tr>
+    <tr><td>G-005</td><td>Every escalated item leaves a meeting with owner + due date; P0/P1 go to next PD meeting immediately</td><td>All syncs / PD meetings</td><td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Green</ac:parameter><ac:parameter ac:name="title">ADOPTED</ac:parameter></ac:structured-macro></td></tr>
+  </tbody>
+</table>
+
+<h1>3. Plan — what each team owns</h1>
+<table>
+  <tbody>
+    <tr><th>Priority</th><th>Workstream</th><th>PIE</th><th>HW Leader / PCT</th><th>SW/UX Leader</th></tr>
+    <tr><td><strong>P1</strong></td><td>Unified NUDD list → official CP deliverable (G-003)</td><td>Propose format using NUDD finding-record standard</td><td><strong>Own list unification &amp; delivery</strong>; anchor on CP agenda; approve</td><td>—</td></tr>
+    <tr><td><strong>P2</strong></td><td>Worst-case usage models + pass/fail criteria → official CP deliverable (G-004)</td><td>Draft models &amp; criteria</td><td>Input on risks / NEW PFS; PFS-limit governance</td><td><strong>Own deliverable</strong>; Bryan: sign off criteria &amp; usage models</td></tr>
+    <tr><td><strong>P3</strong></td><td>Process clarity: PDP checklist status + active process changes</td><td>Consume &amp; align</td><td>Confirm status; publish change list</td><td>—</td></tr>
+    <tr><td><strong>P4</strong></td><td>Meeting page standard (G-002)</td><td>Eric: pilot macro, provide problem examples</td><td>Daniel: decide at sync #2</td><td>—</td></tr>
+    <tr><td><strong>P5</strong></td><td>Monthly registers (escalations + feedback-into + LL)</td><td>Project leads populate T-2 days before sync</td><td>Dispose escalations</td><td>Dispose UX/SW-related escalations</td></tr>
+  </tbody>
+</table>
+
+<h1>4. Open topics by category</h1>
+<p><em>Append new rows per category; mark changes since last check-in 🆕/🔼. Closed topics graduate to section 2.</em></p>
+
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">A. Governance &amp; meetings</ac:parameter>
+  <ac:rich-text-body>
+    <table>
+      <tbody>
+        <tr><th>ID</th><th>Topic</th><th>Next step</th><th>Owner</th><th>Status</th></tr>
+        <tr><td>A-1</td><td>Sync cadence &amp; standing agenda</td><td>Send series invite; confirm at inaugural sync</td><td>Daniel + Eric</td><td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Green</ac:parameter><ac:parameter ac:name="title">ON TRACK</ac:parameter></ac:structured-macro></td></tr>
+        <tr><td>A-2</td><td>Page versioning (fixed URL vs folder+macro)</td><td>Pilot macro; decide at sync #2</td><td>Eric</td><td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Red</ac:parameter><ac:parameter ac:name="title">DECISION</ac:parameter></ac:structured-macro></td></tr>
+      </tbody>
+    </table>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">B. HWV strategy &amp; CP deliverables</ac:parameter>
+  <ac:rich-text-body>
+    <table>
+      <tbody>
+        <tr><th>ID</th><th>Topic</th><th>Next step</th><th>Owner</th><th>Status</th></tr>
+        <tr><td>B-1</td><td>Unified NUDD list</td><td>Confirm HW Leader owner, format, cadence</td><td>PIE + <strong>HW Leader</strong> + PCT</td><td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Red</ac:parameter><ac:parameter ac:name="title">DECISION</ac:parameter></ac:structured-macro></td></tr>
+        <tr><td>B-2</td><td>Worst-case usage models</td><td>Define sign-off governance</td><td>PIE + <strong>SW/UX Leader</strong> + PCT</td><td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Red</ac:parameter><ac:parameter ac:name="title">DECISION</ac:parameter></ac:structured-macro></td></tr>
+        <tr><td>B-3</td><td>Pass/fail criteria (drafted with Bryan)</td><td>Transition into official process</td><td>PIE + <strong>SW/UX Leader</strong></td><td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Yellow</ac:parameter><ac:parameter ac:name="title">IN PROGRESS</ac:parameter></ac:structured-macro></td></tr>
+      </tbody>
+    </table>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">C. Process alignment</ac:parameter>
+  <ac:rich-text-body>
+    <table>
+      <tbody>
+        <tr><th>ID</th><th>Topic</th><th>Next step</th><th>Owner</th><th>Status</th></tr>
+        <tr><td>C-1</td><td>PDP checklist validity</td><td>Confirm status or name replacement</td><td>HW Leader / PCT</td><td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Yellow</ac:parameter><ac:parameter ac:name="title">IN PROGRESS</ac:parameter></ac:structured-macro></td></tr>
+        <tr><td>C-2</td><td>CP Review agenda placement for B-1/B-2</td><td>Confirm structure</td><td>PCT</td><td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Yellow</ac:parameter><ac:parameter ac:name="title">IN PROGRESS</ac:parameter></ac:structured-macro></td></tr>
+      </tbody>
+    </table>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">D. Monthly registers (per-project child pages)</ac:parameter>
+  <ac:rich-text-body>
+    <p>Escalations needing HW Leader / SW-UX Leader action, and feedback-into cases (<em>finding → target → change → evidence</em>). Projects: Bear, Jaws, Maestro, Maverick, Olympia, PCH, Stage.</p>
+    <ac:structured-macro ac:name="children"><ac:parameter ac:name="sort">creation</ac:parameter><ac:parameter ac:name="reverse">true</ac:parameter></ac:structured-macro>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">E. Lessons Learned (LL)</ac:parameter>
+  <ac:rich-text-body>
+    <p>Each LL states the lesson, originating project/case, and resulting rule change; LLs with a general rule graduate to section 2 as x-team guidelines. Label: <code>pie-hwv-ll</code>.</p>
+    <table>
+      <tbody>
+        <tr><th>ID</th><th>Lesson learned</th><th>Source (project / case)</th><th>Resulting change (guideline / PFS / checklist)</th><th>Owner</th><th>Status</th></tr>
+        <tr><td>LL-001</td><td><em>pending input</em></td><td>—</td><td>—</td><td>—</td><td>Open</td></tr>
+      </tbody>
+    </table>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h1>5. Actions</h1>
+<ac:task-list>
+  <ac:task><ac:task-status>incomplete</ac:task-status><ac:task-body>Send sync series invite; confirm cadence — <strong>Daniel + Eric</strong> (before inaugural sync)</ac:task-body></ac:task>
+  <ac:task><ac:task-status>incomplete</ac:task-status><ac:task-body>Build sync page with standing agenda — <strong>Eric</strong> (before inaugural sync)</ac:task-body></ac:task>
+  <ac:task><ac:task-status>incomplete</ac:task-status><ac:task-body>Pilot "latest page" macro with problem examples — <strong>Eric</strong> (decide at sync #2)</ac:task-body></ac:task>
+  <ac:task><ac:task-status>incomplete</ac:task-status><ac:task-body>Confirm PDP checklist status + process change list — <strong>HW Leader / PCT</strong> (inaugural sync)</ac:task-body></ac:task>
+  <ac:task><ac:task-status>incomplete</ac:task-status><ac:task-body>Submit G-003 (HW Leader) + G-004 (SW/UX Leader) proposals for CP adoption — <strong>PIE + HW Leader + SW/UX Leader + PCT</strong> (sync #1–2)</ac:task-body></ac:task>
+  <ac:task><ac:task-status>incomplete</ac:task-status><ac:task-body>Define pass/fail sign-off + PFS limit governance — <strong>PIE + HWV + SW/UX Leader</strong> (after G-003/G-004 adoption)</ac:task-body></ac:task>
+  <ac:task><ac:task-status>incomplete</ac:task-status><ac:task-body>Populate monthly registers (escalations + feedback-into + LL) — <strong>Project PIE leads</strong> (T-2 days before each sync)</ac:task-body></ac:task>
+  <ac:task><ac:task-status>incomplete</ac:task-status><ac:task-body>Collect roadmap topics from HW and SW/UX leaders — <strong>Daniel + Bryan</strong> (ongoing)</ac:task-body></ac:task>
+</ac:task-list>
+
+<h1>6. Monthly check-in log</h1>
+<p><em>One row per sync; minutes on <code>Check-in YYYY-MM</code> child pages (labels <code>pie-hwv-checkin</code> + <code>YYYY-MM</code>).</em></p>
+<table>
+  <tbody>
+    <tr><th>Check-in</th><th>Date</th><th>Key decisions</th><th>Guidelines promoted</th><th>New LLs</th><th>Status</th><th>Minutes</th></tr>
+    <tr><td>2025-10 (inaugural)</td><td><em>TBD</em></td><td> </td><td> </td><td> </td><td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Yellow</ac:parameter><ac:parameter ac:name="title">PLANNED</ac:parameter></ac:structured-macro></td><td><em>link</em></td></tr>
+  </tbody>
+</table>
+<ac:structured-macro ac:name="note">
+  <ac:rich-text-body>
+    <p><strong>Update protocol:</strong> T-2 days — leads update registers + LL, Eric refreshes summary and marks 🆕/🔼 · In sync — record decisions; apply G-005 · T+1 day — Eric promotes guidelines/LLs, updates actions + log, creates child page, clears markers · Anytime — P0/P1 go straight to next PD meeting.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h1>7. References</h1>
+<ul>
+  <li>Meeting plan &amp; operating rules — <em>link repo doc:</em> <code>docs/pie-hwv-future-meeting-plan.md</code></li>
+  <li>Full analysis &amp; monthly register details — <code>docs/pie-hwv-comprehensive-report.md</code></li>
+  <li>Register/finding standard — <code>NUDD/General/templates/nudd-finding-record-template.md</code></li>
+</ul>

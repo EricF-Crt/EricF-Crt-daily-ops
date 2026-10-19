@@ -2,6 +2,8 @@
 
 Ready to publish: copy everything below the line into Confluence. *Italic notes* suggest native macros.
 
+**Optimized native version:** `docs/pie-hwv-confluence-page.storage.xml` — Confluence Storage Format with native status lozenges, expand panels, task-list actions, page-properties header, and children-display; paste via Insert → Markup (storage format) or create via REST API (instructions in the file header).
+
 ---
 
 # 🏠 PIE/HWV × PCE Alignment Hub (HW Leader & SW/UX Leader)
