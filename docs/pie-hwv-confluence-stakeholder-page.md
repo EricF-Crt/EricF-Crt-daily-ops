@@ -17,9 +17,39 @@ Ready to publish: copy everything below the line into Confluence. *Italic notes*
 | --- | --- |
 | **Status** | 🟡 In transition — sync agreed; CP deliverable proposals pending approval |
 | **This month** | Formalizing Unified NUDD list + worst-case usage models as CP requirements |
-| **Decision needed** | HW Leader approval of G-003 (Unified NUDD list) and SW/UX Leader approval of G-004 (usage models + pass/fail) — see Plan, P1/P2 |
+| **Decision needed** | HW Leader approval of G-003 (Unified NUDD list) and SW/UX Leader approval of G-004 (usage models + pass/fail) — see Plan, P1/P2; background in section 2 |
 
-## 2. X-Team Guidelines (the rulebook)
+## 2. Background & decision log
+
+> Source: Eric ↔ D. Casner thread (Oct 2025) + PIE/UX alignment with Bryan. Core driver: shift HWV strategy inputs from relying on individual engineer initiative to **institutionalized CP deliverables**. *(Macro: Expand — collapse by default.)*
+
+**Decisions already made**
+
+| ID | Decision | Outcome | Links |
+| --- | --- | --- | --- |
+| D-01 | Regular PIE↔PCE leader sync | ✅ Agreed by Daniel; Alexa coordinates. Cadence (monthly vs bi-monthly) confirmed at inaugural sync | G-001, A-1, Action 1 |
+| D-02 | Meeting page versioning | ✅ Fixed-overwritten-URL approach declined by Daniel (error-prone, stale-content risk). Adopted: chronological pages + "latest page" macro; Eric pilots and brings concrete problem examples. PIE Weekly / G-PIE keep fixed URLs | G-002, A-2, Action 3 |
+| D-03 | HWV inputs as official CP deliverables | 🔄 Direction agreed in principle; formal proposals pending — NUDD list (HW Leader) + worst-case usage models & pass/fail (SW/UX Leader) | G-003/G-004, B-1/B-2, Action 5 |
+
+**Open asks to PCE leadership**
+
+| Ask | Why it matters | Links |
+| --- | --- | --- |
+| Confirm PDP checklist status — still the mechanism driving x-team deliveries? | PIE needs one authoritative process to align against | C-1, Action 4 |
+| Clarify CP Review structure & agenda placement for B-1/B-2 | Deliverables must be anchored, not ad-hoc | C-2 |
+| Provide roadmap / process topics for sync agenda | Keeps sync two-way, not PIE-push only | Action 8 |
+
+**PIE groundwork (evidence base)**
+
+| Asset | Purpose |
+| --- | --- |
+| HWV Strategy + Overall PIE Questions List | Consolidated open questions per program |
+| G-PIE meeting escalation path | Urgent CN PIE questions routed to US PIE / PD meetings |
+| PIE Weekly Report | Weekly critical questions documented |
+| CP PIE Deck Template | Standard deck: PIE deliveries, readiness, expectations, impacts |
+| Pass/fail criteria proposal (drafted with Bryan) | UX-aligned draft awaiting official integration (B-3) |
+
+## 3. X-Team Guidelines (the rulebook)
 
 > Concluded topics become numbered guidelines applying to **all future projects/programs**. Add rows as topics close; supersede by strikethrough + link, never delete. *(Label: `xteam-guideline`.)*
 
@@ -31,7 +61,7 @@ Ready to publish: copy everything below the line into Confluence. *Italic notes*
 | G-004 | Worst-case usage models + pass/fail criteria = mandatory CP deliverable — owned by **SW/UX Leader** | All programs at CP | 🔴 Proposed |
 | G-005 | Every escalated item leaves a meeting with owner + due date; P0/P1 go to next PD meeting immediately | All syncs / PD meetings | ✅ Adopted |
 
-## 3. Plan — what each team owns
+## 4. Plan — what each team owns
 
 | Priority | Workstream | PIE | HW Leader / PCT | SW/UX Leader |
 | --- | --- | --- | --- | --- |
@@ -41,16 +71,16 @@ Ready to publish: copy everything below the line into Confluence. *Italic notes*
 | **P4** | Meeting page standard (G-002) | Eric: pilot macro, provide problem examples | Daniel: decide at sync #2 | — |
 | **P5** | Monthly registers (escalations + feedback-into + LL) | Project leads populate T-2 days before sync | Dispose escalations | Dispose UX/SW-related escalations |
 
-## 4. Open topics by category
+## 5. Open topics by category
 
-> Append new rows per category; mark changes since last check-in 🆕/🔼. Closed topics graduate to section 2.
+> Append new rows per category; mark changes since last check-in 🆕/🔼. Closed topics graduate to section 3.
 
 **A. Governance & meetings**
 
 | ID | Topic | Next step | Owner | Status |
 | --- | --- | --- | --- | --- |
 | A-1 | Sync cadence & standing agenda | Send series invite; confirm at inaugural sync | Daniel + Eric | 🟢 |
-| A-2 | Page versioning (fixed URL vs folder+macro) | Pilot macro; decide at sync #2 | Eric | 🔴 |
+| A-2 | Page versioning (fixed URL vs folder+macro) | Pilot macro per D-02; decide at sync #2 | Eric | 🟡 |
 
 **B. HWV strategy & CP deliverables**
 
@@ -71,13 +101,13 @@ Ready to publish: copy everything below the line into Confluence. *Italic notes*
 
 **E. Lessons Learned (LL)**
 
-> Cross-project LL captured from validation escapes, field issues, and closed register items. Each LL must state the lesson, the originating project/case, and the resulting rule change; LLs with a general rule graduate to section 2 as x-team guidelines. *(Label: `pie-hwv-ll`.)*
+> Cross-project LL captured from validation escapes, field issues, and closed register items. Each LL must state the lesson, the originating project/case, and the resulting rule change; LLs with a general rule graduate to section 3 as x-team guidelines. *(Label: `pie-hwv-ll`.)*
 
 | ID | Lesson learned | Source (project / case) | Resulting change (guideline / PFS / checklist) | Owner | Status |
 | --- | --- | --- | --- | --- | --- |
 | LL-001 | _pending input_ | — | — | — | Open |
 
-## 5. Actions
+## 6. Actions
 
 | # | Action | Owner | Due | Status |
 | --- | --- | --- | --- | --- |
@@ -90,7 +120,7 @@ Ready to publish: copy everything below the line into Confluence. *Italic notes*
 | 7 | Populate monthly registers (escalations + feedback-into + LL) | Project PIE leads | T-2 days before each sync | Open |
 | 8 | Collect roadmap topics from HW and SW/UX leaders | Daniel + Bryan | Ongoing | Open |
 
-## 6. Monthly check-in log
+## 7. Monthly check-in log
 
 > One row per sync; minutes on `Check-in YYYY-MM` child pages. *(Macro: Children Display; labels `pie-hwv-checkin` + `YYYY-MM`.)*
 
@@ -100,7 +130,7 @@ Ready to publish: copy everything below the line into Confluence. *Italic notes*
 
 **Update protocol:** T-2 days — leads update registers + LL, Eric refreshes summary and marks 🆕/🔼 · In sync — record decisions; apply G-005 · T+1 day — Eric promotes guidelines/LLs, updates actions + log, creates child page, clears markers · Anytime — P0/P1 go straight to next PD meeting.
 
-## 7. References
+## 8. References
 - `docs/pie-hwv-future-meeting-plan.md` — meeting plan & operating rules
 - `docs/pie-hwv-comprehensive-report.md` — full analysis & monthly register details
 - `NUDD/General/templates/nudd-finding-record-template.md` — register/finding standard
