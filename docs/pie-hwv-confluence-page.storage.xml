@@ -35,11 +35,58 @@
   <tbody>
     <tr><th>Status</th><td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Yellow</ac:parameter><ac:parameter ac:name="title">IN TRANSITION</ac:parameter></ac:structured-macro> sync agreed; CP deliverable proposals pending approval</td></tr>
     <tr><th>This month</th><td>Formalizing Unified NUDD list + worst-case usage models as CP requirements</td></tr>
-    <tr><th>Decision needed</th><td>HW Leader approval of G-003 (Unified NUDD list) and SW/UX Leader approval of G-004 (usage models + pass/fail) — see Plan, P1/P2</td></tr>
+    <tr><th>Decision needed</th><td>HW Leader approval of G-003 (Unified NUDD list) and SW/UX Leader approval of G-004 (usage models + pass/fail) — see Plan, P1/P2; background in section 2</td></tr>
   </tbody>
 </table>
 
-<h1>2. X-Team Guidelines (the rulebook)</h1>
+<h1>2. Background &amp; decision log</h1>
+<p><em>Source: Eric ↔ D. Casner thread (Oct 2025) + PIE/UX alignment with Bryan. Core driver: shift HWV strategy inputs from relying on individual engineer initiative to <strong>institutionalized CP deliverables</strong>.</em></p>
+
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">Decisions already made</ac:parameter>
+  <ac:rich-text-body>
+    <table>
+      <tbody>
+        <tr><th>ID</th><th>Decision</th><th>Outcome</th><th>Links</th></tr>
+        <tr><td>D-01</td><td>Regular PIE↔PCE leader sync</td><td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Green</ac:parameter><ac:parameter ac:name="title">AGREED</ac:parameter></ac:structured-macro> Agreed by Daniel; Alexa coordinates. Cadence (monthly vs bi-monthly) confirmed at inaugural sync</td><td>G-001, A-1, Action 1</td></tr>
+        <tr><td>D-02</td><td>Meeting page versioning</td><td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Green</ac:parameter><ac:parameter ac:name="title">AGREED</ac:parameter></ac:structured-macro> Fixed-overwritten-URL approach declined by Daniel (error-prone, stale-content risk). Adopted: chronological pages + "latest page" macro; Eric pilots and brings concrete problem examples. PIE Weekly / G-PIE keep fixed URLs</td><td>G-002, A-2, Action 3</td></tr>
+        <tr><td>D-03</td><td>HWV inputs as official CP deliverables</td><td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Blue</ac:parameter><ac:parameter ac:name="title">IN PROGRESS</ac:parameter></ac:structured-macro> Direction agreed in principle; formal proposals pending — NUDD list (HW Leader) + worst-case usage models &amp; pass/fail (SW/UX Leader)</td><td>G-003/G-004, B-1/B-2, Action 5</td></tr>
+      </tbody>
+    </table>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">Open asks to PCE leadership</ac:parameter>
+  <ac:rich-text-body>
+    <table>
+      <tbody>
+        <tr><th>Ask</th><th>Why it matters</th><th>Links</th></tr>
+        <tr><td>Confirm PDP checklist status — still the mechanism driving x-team deliveries?</td><td>PIE needs one authoritative process to align against</td><td>C-1, Action 4</td></tr>
+        <tr><td>Clarify CP Review structure &amp; agenda placement for B-1/B-2</td><td>Deliverables must be anchored, not ad-hoc</td><td>C-2</td></tr>
+        <tr><td>Provide roadmap / process topics for sync agenda</td><td>Keeps sync two-way, not PIE-push only</td><td>Action 8</td></tr>
+      </tbody>
+    </table>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">PIE groundwork (evidence base)</ac:parameter>
+  <ac:rich-text-body>
+    <table>
+      <tbody>
+        <tr><th>Asset</th><th>Purpose</th></tr>
+        <tr><td>HWV Strategy + Overall PIE Questions List</td><td>Consolidated open questions per program</td></tr>
+        <tr><td>G-PIE meeting escalation path</td><td>Urgent CN PIE questions routed to US PIE / PD meetings</td></tr>
+        <tr><td>PIE Weekly Report</td><td>Weekly critical questions documented</td></tr>
+        <tr><td>CP PIE Deck Template</td><td>Standard deck: PIE deliveries, readiness, expectations, impacts</td></tr>
+        <tr><td>Pass/fail criteria proposal (drafted with Bryan)</td><td>UX-aligned draft awaiting official integration (B-3)</td></tr>
+      </tbody>
+    </table>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h1>3. X-Team Guidelines (the rulebook)</h1>
 <ac:structured-macro ac:name="note">
   <ac:rich-text-body><p>Concluded topics become numbered guidelines applying to <strong>all future projects/programs</strong>. Add rows as topics close; supersede by strikethrough + link, never delete. Label: <code>xteam-guideline</code>.</p></ac:rich-text-body>
 </ac:structured-macro>
@@ -54,7 +101,7 @@
   </tbody>
 </table>
 
-<h1>3. Plan — what each team owns</h1>
+<h1>4. Plan — what each team owns</h1>
 <table>
   <tbody>
     <tr><th>Priority</th><th>Workstream</th><th>PIE</th><th>HW Leader / PCT</th><th>SW/UX Leader</th></tr>
@@ -66,8 +113,8 @@
   </tbody>
 </table>
 
-<h1>4. Open topics by category</h1>
-<p><em>Append new rows per category; mark changes since last check-in 🆕/🔼. Closed topics graduate to section 2.</em></p>
+<h1>5. Open topics by category</h1>
+<p><em>Append new rows per category; mark changes since last check-in 🆕/🔼. Closed topics graduate to section 3.</em></p>
 
 <ac:structured-macro ac:name="expand">
   <ac:parameter ac:name="title">A. Governance &amp; meetings</ac:parameter>
@@ -76,7 +123,7 @@
       <tbody>
         <tr><th>ID</th><th>Topic</th><th>Next step</th><th>Owner</th><th>Status</th></tr>
         <tr><td>A-1</td><td>Sync cadence &amp; standing agenda</td><td>Send series invite; confirm at inaugural sync</td><td>Daniel + Eric</td><td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Green</ac:parameter><ac:parameter ac:name="title">ON TRACK</ac:parameter></ac:structured-macro></td></tr>
-        <tr><td>A-2</td><td>Page versioning (fixed URL vs folder+macro)</td><td>Pilot macro; decide at sync #2</td><td>Eric</td><td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Red</ac:parameter><ac:parameter ac:name="title">DECISION</ac:parameter></ac:structured-macro></td></tr>
+        <tr><td>A-2</td><td>Page versioning (fixed URL vs folder+macro)</td><td>Pilot macro per D-02; decide at sync #2</td><td>Eric</td><td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Yellow</ac:parameter><ac:parameter ac:name="title">IN PROGRESS</ac:parameter></ac:structured-macro></td></tr>
       </tbody>
     </table>
   </ac:rich-text-body>
@@ -130,7 +177,7 @@
   </ac:rich-text-body>
 </ac:structured-macro>
 
-<h1>5. Actions</h1>
+<h1>6. Actions</h1>
 <ac:task-list>
   <ac:task><ac:task-status>incomplete</ac:task-status><ac:task-body>Send sync series invite; confirm cadence — <strong>Daniel + Eric</strong> (before inaugural sync)</ac:task-body></ac:task>
   <ac:task><ac:task-status>incomplete</ac:task-status><ac:task-body>Build sync page with standing agenda — <strong>Eric</strong> (before inaugural sync)</ac:task-body></ac:task>
@@ -142,7 +189,7 @@
   <ac:task><ac:task-status>incomplete</ac:task-status><ac:task-body>Collect roadmap topics from HW and SW/UX leaders — <strong>Daniel + Bryan</strong> (ongoing)</ac:task-body></ac:task>
 </ac:task-list>
 
-<h1>6. Monthly check-in log</h1>
+<h1>7. Monthly check-in log</h1>
 <p><em>One row per sync; minutes on <code>Check-in YYYY-MM</code> child pages (labels <code>pie-hwv-checkin</code> + <code>YYYY-MM</code>).</em></p>
 <table>
   <tbody>
@@ -156,7 +203,7 @@
   </ac:rich-text-body>
 </ac:structured-macro>
 
-<h1>7. References</h1>
+<h1>8. References</h1>
 <ul>
   <li>Meeting plan &amp; operating rules — <em>link repo doc:</em> <code>docs/pie-hwv-future-meeting-plan.md</code></li>
   <li>Full analysis &amp; monthly register details — <code>docs/pie-hwv-comprehensive-report.md</code></li>
