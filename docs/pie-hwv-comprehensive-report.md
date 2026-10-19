@@ -1,106 +1,72 @@
-# Report 2 — Comprehensive PIE/HWV Report: Requirements, Cross-Team Alignment, and Open Topics
+# Report 2 — Comprehensive PIE/HWV Thread Analysis and Follow-Up Plan
 
-## 1. Purpose and scope
-This report consolidates the PIE ↔ HW leadership discussion (Slack thread, Eric Feng ↔ D. Casner, Oct 10–15) with PIE/HWV materials already in this repository. It is intended to:
-- Capture PIE requirements and expectations toward PCE / HW leaders and cross-team leads.
-- Record the current state of agreement and disagreement.
-- Define follow-ups so the topics can move into official process (CP deliveries) rather than relying on individual engineer recognition.
+Companion document: `docs/pie-hwv-key-discussion-points.md` (Report 1 — short discussion list).
 
-Companion document: `docs/pie-hwv-key-discussion-points.md` (short discussion list).
+## 1. Context and strategic alignment
+The thread (Eric Feng ↔ D. Casner, Oct 10–15) highlights a critical transition phase between PIE (Product Integration Engineering) / HWV (Hardware Validation) and HW (Hardware) / EL (Electrical) leadership. All HW/EL leaders have been following Heartbeat Logic planning and driving project meetings, and PIE engineers depend on those meetings for agendas, deliverables, and escalation.
 
-## 2. Background
-HW/EL leaders have been following Heartbeat Logic planning and driving project meetings. PIE engineers interact with these meetings weekly and depend on:
-- Finding the latest meeting page/agenda reliably.
-- Clear, official channels for PIE questions and HWV strategy inputs at CP reviews.
-- Visibility into process changes (PDP checklist, CP review meetings) that affect cross-team deliveries.
+The core objective driven by PIE is to shift away from relying solely on individual engineering leads' initiative and per-project recognition, and instead **institutionalize hardware validation strategy inputs into the official product development lifecycle** — specifically CP Reviews and PDP workflows.
 
-Today, several PIE inputs reach projects only through engineer leads' initiative and per-project recognition, not as official process requirements. The thread with D. Casner is the first step toward formalizing this.
+## 2. Operational & workflow mechanics (meeting page strategy)
+An immediate logistical friction point exists regarding how engineering teams access critical meeting agendas:
 
-## 3. Topic analysis
+- **PIE proposal (Eric):** A static, fixed Confluence URL that is always live and latest, updated weekly, archiving previous versions as renamed "LAST Week" pages. Benefits: engineers find the latest page via a single saved bookmark/URL; the fixed URL can be leveraged by tooling even without Claude. Precedent: all PIE Weekly and PIE-JDM meeting pages use fixed URLs.
+- **HW leadership position (Daniel):** Rejected the fixed-page + copy/rename proposal, citing that it is error prone and creates version confusion — it becomes difficult to know with confidence whether a page contains up-to-date information vs. leftover content from the previous week.
+- **Proposed compromise:** Maintain chronological folders but implement a **Confluence Macro** that dynamically links engineers to the most recent weekly page, preserving the single-bookmark benefit without copy/rename risk.
+- **Pending:** Daniel requested specific examples of problems caused by taking the most recent page from a fixed folder; Eric to document 2–3 concrete incidents (e.g., stale agendas at meeting start, wrong page used for pre-reads) before the approach is finalized.
 
-### 3.1 Meeting page / Confluence strategy (open disagreement)
-**PIE proposal (Eric):**
-- Use a fixed Confluence URL that is always live/latest; archive by copying the page and renaming it "LAST Week Page".
-- Precedent: all PIE Weekly and PIE-JDM meeting pages use fixed URLs.
-- Benefits: one bookmark always works; engineers (and tooling) can rely on a stable URL "even without Claude".
+## 3. HWV Strategy & process dependencies
+PIE has outlined urgent dependencies required from HW leaders and PCE to solidify the HWV strategy. These are expected to become **official, integrated requirements in CP Reviews** rather than ad-hoc engineering efforts:
 
-**HW leader position (Daniel):**
-- Disagrees with fixed-page + copy/rename archiving: error prone, and hard to trust whether content is current vs. leftover from the previous week.
-- Prefers newest page per meeting in a fixed folder.
-- Offers a compromise: a Confluence macro that links to the most recent page.
-- Requested: specific examples of problems caused by the "most recent page in a fixed folder" approach.
+### 3.1 Unified NUDD validation (Delivery A)
+- PIE requires a consolidated NUDD (New, Unique, Different, Difficult) list from PCE.
+- This list is fundamental for scoping HWV validation coverage, assessing new risks, and determining if novel PFS (Product Functional Specifications) must be authored.
+- **Open questions:** Who in PCE owns unification? What format and cadence? How is coverage traced back into the HWV strategy?
+- **Repository support:** `NUDD/General/templates/nudd-finding-record-template.md` provides a ready structure (observation / risk / evidence E0–E5 / priority P0–P3 / closure path) suitable for standardizing the unified list across project folders (`NUDD/Bear`, `Jaws`, `Maestro`, `Maverick`, `Olympia`, `PCH`, `PIE`, `Stage`).
 
-**Assessment:** This is a tooling/UX disagreement with a viable middle ground. The macro-based "latest page" link preserves the single-bookmark benefit without the copy/rename risk. PIE should collect 2–3 concrete incidents (e.g., engineers joining with stale agenda, wrong page used for pre-reads) to either justify the fixed-URL model or accept the macro approach.
+### 3.2 Worst-case usage models and specification limits (Delivery B)
+- PIE needs clearly defined **in-scope worst-case usage models**.
+- These models are necessary to test existing PFS limits, adjust them if necessary (or author NEW PFS), and establish rigid pass/fail criteria for validation testing.
+- **Open questions:** Approval path to make it a CP deliverable; who signs off pass/fail criteria; how PFS limit adjustments are governed.
 
-**Next steps:**
-1. Eric: document concrete examples of discovery/staleness problems. 
-2. Jointly evaluate the Confluence macro solution on one meeting series as a pilot.
-3. Decide and document the standard in the meeting operating notes.
+### 3.3 Process enforcement
+- There is an open question regarding the continued validity and enforcement of the **PDP checklist**. PIE needs clarity on whether it remains the primary mechanism for driving and tracking cross-team deliveries, and what replaces it if deprecated.
+- CP Review meeting structure and expected PIE artifacts also need confirmation.
 
-### 3.2 Regular PIE ↔ HW leader sync (agreed)
-- Daniel agreed a regular sync on HWV/PD topics is valuable and will discuss handling with Alexa.
-- Eric will prepare a meeting Confluence page covering the topics in this report.
-- Open: cadence (monthly vs bi-monthly), participants, and standing agenda.
+## 4. Cross-functional collaboration efforts (already in place)
+To proactively manage these gaps, PIE has initiated several tracking and alignment measures that the formalized process can reuse:
 
-**Recommended standing agenda:**
-1. HWV strategy coverage status (NUDD list, worst-case usage model).
-2. PIE open questions needing HW leader / PCT support.
-3. Process changes affecting PIE (PDP checklist, CP reviews, workflow optimizations).
-4. Roadmap topics raised by either side.
-
-### 3.3 PIE expectations: HWV Strategy inputs as official CP deliveries (highest priority)
-PIE requires a valid and comprehensive HWV Strategy. Two deliveries should become **official requirements on the CP review agenda**:
-
-**Delivery A — Unified NUDD list from PCE**
-- Purpose: assure HWV Strategy coverage; surface risks; identify whether a NEW PFS is needed.
-- Open questions: Who in PCE owns unification? What format and cadence? How is coverage traced back into the HWV strategy?
-- Repository support: `NUDD/General/templates/nudd-finding-record-template.md` provides a ready structure (observation / risk / evidence E0–E5 / priority P0–P3 / closure path) suitable for standardizing the unified list across projects (`NUDD/Bear`, `Jaws`, `Maestro`, `Maverick`, `Olympia`, `PCH`, `PIE`, `Stage`).
-
-**Delivery B — In-scope worst-case usage model**
-- Purpose: determine if a NEW PFS is needed or current PFS limits require adjustment; drive pass/fail criteria definitions.
-- Status: PIE & UX proposal aligned with UX leader Byran, started from gaps; targeting official adoption.
-- Open questions: approval path to make it a CP deliverable; who signs off pass/fail criteria; how PFS limit adjustments are governed.
-
-**Gap:** Both deliveries currently depend on engineer leads and per-project recognition rather than official process. The ask to HW leadership/PCT is to anchor them in the official process and CP deliveries.
-
-### 3.4 Process/workflow visibility
-PIE needs confirmation on which processes are being optimized and which remain authoritative:
-- **PDP checklist** — is it still in use to drive cross-team deliveries? If deprecated, what replaces it?
-- **CP Review meetings** — current expectations, required PIE artifacts, and how the two deliveries above fit the agenda.
-- Any other workflow changes PIE should attend to and follow up on.
-
-### 3.5 Existing PIE efforts (leverage points)
-PIE has already built mechanisms that the formalized process can reuse:
 | Mechanism | Function |
 | --- | --- |
-| HWV Strategy + Overall PIE Questions List | Central register of open HWV questions |
-| G-PIE Meeting | Routes CN PIE lead urgent questions to US PIE for PD meeting discussion |
+| UX & PIE pass/fail criteria proposal | Drafted and aligned with UX leader Bryan, started from identified gaps; now requires official integration |
 | PIE Weekly Report | Documents weekly critical questions |
-| CP PIE Deck Template | Standard CP content: PIE deliveries, readiness, expectations, impacts |
+| G-PIE Meeting | Escalates urgent CN PIE questions to US PIE for discussion in PD meetings |
+| CP PIE Deck Template | Defines PIE deliverables, readiness, expectations, and impacts for CP reviews |
+| HWV Strategy + Overall PIE Questions List | Central register of open HWV questions |
 
-These map naturally onto the PIE Soundstage dashboard structure already specified in this repository (`PFS/pie-soundstage-dashboard-spec.md`, `docs/pie-soundstage-dashboard-delivery.md`): KPI strip (readiness), risk register (NUDD/PFS risks), decision log (CP decisions), dependency tracker (x-team deliveries).
+These map naturally onto the PIE Soundstage dashboard structure already specified in this repository (`PFS/pie-soundstage-dashboard-spec.md`, `docs/pie-soundstage-dashboard-delivery.md`): KPI strip (readiness), risk register (NUDD/PFS risks), decision log (CP decisions), dependency tracker (cross-team deliveries).
 
-## 4. Risks if not addressed
+## 5. Risks if not addressed
 - **Coverage risk:** Without a unified NUDD list as a CP requirement, HWV strategy coverage depends on individual initiative; NUDD findings may not translate into PFS/validation scope.
-- **Criteria risk:** Without an official worst-case usage model, pass/fail criteria and PFS limits may be set inconsistently across projects.
+- **Criteria risk:** Without official worst-case usage models, pass/fail criteria and PFS limits may be set inconsistently across projects.
 - **Discovery risk:** Engineers using stale or wrong meeting pages lose preparation time and act on outdated agendas.
 - **Escalation risk:** PIE open questions without an official channel surface late in PD meetings instead of being pre-staged.
 
-## 5. Consolidated action list
+## 6. Action items & next steps
 | # | Action | Owner | Depends on |
 | --- | --- | --- | --- |
-| 1 | Set up regular PIE↔HW leader 1:1 (cadence TBD) | Daniel (with Alexa) + Eric | — |
-| 2 | Build meeting Confluence page with these topics | Eric | — |
-| 3 | Provide concrete examples of "latest page" discovery problems | Eric | — |
-| 4 | Evaluate Confluence macro for latest-page link | Daniel / Confluence admin | 3 |
-| 5 | Confirm PDP checklist status and active process changes | HW leader / PCT | — |
-| 6 | Propose Unified NUDD list (from PCE) as official CP deliverable | PIE + PCE + PCT | — |
-| 7 | Propose in-scope worst-case usage model as official CP deliverable | PIE + UX (Byran) + PCT | — |
-| 8 | Define pass/fail criteria and PFS limit adjustment governance | PIE + HWV | 7 |
-| 9 | Collect roadmap/process topics from Daniel for future agendas | Daniel | 1 |
+| 1 | **Schedule leadership sync:** finalize calendar cadence (monthly or bi-monthly) for the HWV/PD sync involving Eric, Daniel, and Alexa | Daniel (with Alexa) + Eric | — |
+| 2 | **Implement Confluence solution:** Eric to establish the meeting Confluence structure leveraging Daniel's suggested Macro approach rather than the fixed-URL method, after piloting on one meeting series | Eric + Confluence admin | 3 |
+| 3 | Provide concrete examples of "latest page" discovery problems to close the versioning debate | Eric | — |
+| 4 | **Define agenda:** HW Leadership to provide roadmap and process topics for the inaugural leadership sync, prioritizing integration of the NUDD list and worst-case usage models into standard CP deliveries | Daniel / HW Leaders | 1 |
+| 5 | Confirm PDP checklist status and the authoritative list of active process changes | HW leader / PCT | — |
+| 6 | Propose Unified NUDD list (from PCE) as an official CP deliverable | PIE + PCE + PCT | — |
+| 7 | Propose in-scope worst-case usage models as an official CP deliverable | PIE + UX (Bryan) + PCT | — |
+| 8 | Define pass/fail criteria sign-off and PFS limit adjustment governance | PIE + HWV | 7 |
+| 9 | Review PIE Open Questions List with HW leader / PCT and assign owners/dates | Eric + Daniel / PCT | 1 |
 
-## 6. References
-- Slack thread: Eric Feng ↔ D. Casner, Oct 10 and Oct 15 (source of sections 2–3).
+## 7. References
+- Slack thread: Eric Feng ↔ D. Casner, Oct 10 and Oct 15 (source of sections 1–4).
 - `docs/pie-hwv-key-discussion-points.md` — key points list (Report 1).
 - `NUDD/PIE/README.md` — PIE exploration notes.
 - `NUDD/General/templates/nudd-finding-record-template.md` — NUDD finding record standard.
