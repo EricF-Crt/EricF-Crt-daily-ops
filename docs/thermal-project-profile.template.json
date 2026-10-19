@@ -1,0 +1,122 @@
+{
+  "template_version": "1.0",
+  "purpose": "Documentation template for one scenario; not a runnable configuration or validation schema.",
+  "completion_rule": "Null and empty values mean unresolved, never zero, not applicable, or passed. Resolve required fields and record approvals before execution. Optional omissions require a coverage rationale.",
+  "status": "draft",
+  "profile_id": null,
+  "revision": null,
+  "owner": null,
+  "product": {
+    "name": null,
+    "category": null,
+    "category_reuse_rationale": null,
+    "soc_vendor": null,
+    "soc_model": null,
+    "ddr_capacity": {"value": null, "unit": null},
+    "hardware_revision": null,
+    "software_build": null,
+    "thermal_constraints": []
+  },
+  "scenario": {
+    "requirement_references": [],
+    "supported_functions_and_concurrency": [],
+    "level": null,
+    "level_options": [
+      "engineering_reference",
+      "baseline_p50",
+      "outlier_p99",
+      "worst_supported",
+      "abnormal_protection"
+    ],
+    "definition_approval_reference": null,
+    "engineering_corner_rationale": null
+  },
+  "usage_evidence": {
+    "sources": [],
+    "provisional": true,
+    "population_and_versions": null,
+    "active_playback_definition": null,
+    "metric_and_units": null,
+    "sampling_and_aggregation_window": null,
+    "time_weighting_and_quantile_method": null,
+    "valid_duration_and_coverage": null,
+    "concurrency_and_peak_duration": null,
+    "missing_data_and_throttling_treatment": null,
+    "uncertainty_and_limitations": [],
+    "statistical_basis_not_applicable_rationale": null,
+    "reassessment_trigger": null
+  },
+  "workload": {
+    "existing_tool_location_and_owner": null,
+    "tool_and_version": null,
+    "invocation_description": null,
+    "threads_and_affinity": null,
+    "memory_allocation_and_units": null,
+    "dvfs_and_governor_configuration": null,
+    "background_services_and_concurrency": null,
+    "requested_demand_and_units": null,
+    "duration_and_stabilization": null,
+    "selection_and_correlation_rationale": null
+  },
+  "conditions": {
+    "ambient_and_exposure": null,
+    "placement_orientation_and_airflow": null,
+    "power_state_and_accessories": null,
+    "hardware_limit_references": [],
+    "sensor_mapping_and_calibration": [],
+    "hotspot_correlation_uncertainty_and_delay": null,
+    "control_layers_and_threshold_sources": [],
+    "expected_mitigation_and_recovery": null
+  },
+  "execution_and_safety": {
+    "method_reference": null,
+    "sample_and_repetition_rationale": null,
+    "synchronized_metrics_and_units": [],
+    "required_metrics": [],
+    "optional_metrics_and_coverage_rationale": [],
+    "load_validity_checks": [],
+    "approved_boundaries_and_stop_conditions": null,
+    "safety_approval_reference": null,
+    "protection_must_remain_enabled": true
+  },
+  "acceptance": {
+    "thermal_limits_and_margins": null,
+    "functional_performance_requirements": null,
+    "permitted_mitigation": null,
+    "protection_and_recovery_criteria": null,
+    "approvals": []
+  },
+  "results": {
+    "execution_validity": "not_run",
+    "product_acceptance": "pending",
+    "actual_configuration_reference": null,
+    "timestamped_evidence_references": [],
+    "achieved_demand_and_units": null,
+    "limiting_mechanism": null,
+    "functional_impact": null,
+    "thermal_and_control_response": null,
+    "recovery_observation": null,
+    "missing_telemetry_and_failures": [],
+    "coverage_disposition": null
+  },
+  "alternative_or_exception": {
+    "proposal": null,
+    "retained_requirements": [],
+    "changed_behavior": null,
+    "lost_coverage": null,
+    "validation_evidence": [],
+    "residual_risk": null,
+    "approval_reference": null
+  },
+  "maintenance": {
+    "change_triggers": [
+      "usage_or_supported_features",
+      "soc_ddr_or_hardware_revision",
+      "software_resource_demand",
+      "thermal_policy_or_sensors",
+      "mechanical_configuration"
+    ],
+    "impact_assessment_reference": null,
+    "revalidation_required": null
+  }
+}

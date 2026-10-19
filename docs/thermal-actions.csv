@@ -1,0 +1,20 @@
+id,action_or_decision,proposed_lead,named_dri,dependencies,deliverable,acceptance_criterion,agreed_date,evidence,status
+TF-01,Confirm scope terminology and owners,Cross-functional coordinator,TBD,,Kickoff decision record,Definitions and named deliverable owners agreed,,,open
+TF-02,Classify products and supported scenarios,Product / UX,TBD,TF-01,Product and scenario map,Category reuse and supported degradation or recovery explicitly justified,,,open
+TF-03,Define time-weighted P50/P99 usage evidence,Data Science + SW/Application,TBD,TF-02,Usage model,Population metric weighting duration uncertainty and throttling treatment documented,,,open
+TF-04,Document platform limits and sensors,EE,TBD,TF-01,Hardware specification,Limits and sensor correlations traceable to applicable hardware revisions,,,open
+TF-05,Verify Amlogic thermal controls and recovery,SW Platform / SoC,TBD,TF-04,Amlogic control specification,Reported thresholds and actual behavior verified for applicable builds without assuming universal targets,,,open
+TF-06,Complete Synaptics thermal-control review,SW Platform / SoC,TBD,TF-04,Synaptics control specification,Control layers observations actions and recovery documented for applicable platforms,,,open
+TF-07,Establish MTK applicability and controls,SW Platform / SoC,TBD,TF-04,MTK applicability and control specification,Applicability justified and relevant controls documented; missing evidence is not N/A,,,open
+TF-08,Inventory existing SW tools and minimal changes,SW tooling owner,TBD,TF-01,Tool inventory and capability matrix,Source locations owners versions integration gaps and existing validation commands identified,,,open
+TF-09,Derive profiles and reusable guideline,Thermal,TBD,TF-03;TF-04;TF-05;TF-06;TF-07,Guideline and candidate profiles,Usage evidence maps to executable workload rationale and measurable thermal criteria,,,open
+TF-10,Resolve Stage memory and workload discrepancies,EE + SW + Thermal,TBD,TF-02;TF-04,Stage profile corrections,Competing recipes mapped to hardware and software revisions; Bluetooth line-out coverage decided,,,open
+TF-11,Resolve Pallas constraints and alternatives,Thermal + design owners,TBD,TF-02;TF-04,Pallas coverage decision,Identical levels explained with coverage evidence and approved residual-risk disposition,,,open
+TF-12,Justify shared recipes and differing profiles,Thermal + SW,TBD,TF-03;TF-04,Project comparison,Olympia/Bear/Mavrick/Gambit reuse and Tito/Mojave differences justified; product naming confirmed,,,open
+TF-13,Resolve combined-load and environmental coverage,Product + Thermal + Reliability,TBD,TF-02,Scenario applicability decisions,Audio/RF HDMI/WAV video Solar and sensor/backoff gaps resolved or explicitly owned,,,open
+TF-14,Approve pilot methods and safeguards,PIE/HWV + Thermal + Reliability/Safety,TBD,TF-09;TF-10;TF-11;TF-12;TF-13,Verification readiness record,Validity checks criteria required telemetry boundaries and stop conditions approved,,,open
+TF-15,Extend existing tools only where required,SW tooling owner,TBD,TF-08;TF-09,Common execution and reporting package,Minimal changes cover approved profiles and expose unsupported capabilities; existing checks pass,,,open
+TF-16,Run representative and constrained pilots,Eric / PIE-HWV,TBD,TF-14;TF-15,Pilot verification report,Requested and achieved loads protection performance and recovery evidenced; invalid tests cannot pass,,,open
+TF-17,Approve release and train execution teams,Thermal + Daniel / GDM,TBD,TF-16,Controlled framework and training package,Technical approvals exceptions and representative GDM reproduction recorded,,,open
+TF-18,Review linked issue and source decisions,Eric / PIE-HWV,TBD,TF-01,SWPBL-244203 review record,Verified issue requirements routed into affected profiles and actions,,,open
+TF-19,Publish reviewed page to Confluence,Documentation coordinator,TBD,TF-01,Published page and attachment links,Destination and authorized access confirmed; preview checked and published URL recorded,,,open
